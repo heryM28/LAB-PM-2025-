@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <!-- Layout utama dalam card untuk item karakter -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- Gambar karakter, di-load oleh Picasso -->
+        <ImageView
+            android:id="@+id/character_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <!-- Nama karakter, teks tebal -->
+        <TextView
+            android:id="@+id/character_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@+id/character_image"
+            app:layout_constraintStart_toEndOf="@+id/character_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Rick Sanchez" />
+
+        <!-- Status karakter (Alive/Dead/Unknown) -->
+        <TextView
+            android:id="@+id/character_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/character_name"
+            app:layout_constraintStart_toEndOf="@+id/character_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Alive" />
+
+        <!-- Spesies karakter -->
+        <TextView
+            android:id="@+id/character_species"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/character_status"
+            app:layout_constraintStart_toEndOf="@+id/character_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Human" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
