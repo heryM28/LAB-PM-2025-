@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cover_card_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_book_cover_detail"
+                    android:layout_width="150dp"
+                    android:layout_height="225dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder_cover_foreground" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_book_title_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cover_card_detail"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Book Title" />
+
+            <TextView
+                android:id="@+id/tv_book_author_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/tv_book_title_detail"
+                app:layout_constraintStart_toStartOf="@+id/tv_book_title_detail"
+                app:layout_constraintTop_toBottomOf="@+id/tv_book_title_detail"
+                tools:text="Author Name" />
+
+            <TextView
+                android:id="@+id/tv_book_year_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="@+id/tv_book_author_detail"
+                app:layout_constraintStart_toStartOf="@+id/tv_book_author_detail"
+                app:layout_constraintTop_toBottomOf="@+id/tv_book_author_detail"
+                tools:text="2023" />
+
+            <TextView
+                android:id="@+id/tv_book_genre_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Genre:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_book_year_detail"
+                app:layout_constraintTop_toBottomOf="@+id/tv_book_year_detail" />
+
+            <TextView
+                android:id="@+id/tv_book_genre_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_book_genre_label"
+                app:layout_constraintEnd_toEndOf="@+id/tv_book_year_detail"
+                app:layout_constraintStart_toEndOf="@+id/tv_book_genre_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_book_genre_label"
+                tools:text="Fiction" />
+
+            <TextView
+                android:id="@+id/tv_book_rating_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Rating:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_book_genre_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_book_genre_label" />
+
+            <RatingBar
+                android:id="@+id/rating_bar_detail"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:progressTint="@color/colorAccent"
+                android:stepSize="0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_book_rating_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_book_rating_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_book_rating_label" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/blurb_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cover_card_detail">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_book_blurb_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_book_blurb_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorText"
+                        tools:text="Book description goes here..." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="80dp"
+        android:src="@drawable/ic_favorite_outline"
+        app:backgroundTint="@color/colorPrimary"
+        app:tint="@android:color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_edit"
+        app:backgroundTint="@color/colorAccent"
+        app:tint="@android:color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

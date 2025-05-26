@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Akses cache internal -->
+    <cache-path
+        name="cache"
+        path="." />
+
+    <!-- Akses files internal -->
+    <files-path
+        name="files"
+        path="." />
+
+    <!-- Akses external storage (pra-Android Q) -->
+    <external-path
+        name="external_files"
+        path="." />
+</paths>
